@@ -19,7 +19,7 @@ public class AboutScreen extends Activity{
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3498DB")));
         actionBar.setTitle(Html.fromHtml("<large>ABOUT</large>"));
         
-        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "fonts/Mojav/Mojave-Regular.ttf");
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "fonts/Mojave/Mojave-Regular.ttf");
         TextView myTextView = (TextView)findViewById(R.id.anamnesiaTxt);
         TextView myTextView1 = (TextView)findViewById(R.id.kitsUsedTxt);
         myTextView.setTypeface(myTypeface);
