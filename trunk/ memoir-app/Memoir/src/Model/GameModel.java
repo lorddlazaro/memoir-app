@@ -3,16 +3,55 @@ package Model;
 import java.util.ArrayList;
 
 public class GameModel {
-	ArrayList<String> wordList = new ArrayList<String>();
-	int currentWordIndex = 0;
-	int mistake =0;
-	int correct =0;
+	private ArrayList<String> wordList = new ArrayList<String>();
+	private int currentWordIndex = 0;
+	private int skips =0;
+	private int mistakes=0;
+	private WordPool wordPool = new WordPool();
 	//declare time finished;
 	
-	public GameModel(int words){
-		for(int i=0;i<words;i++){
-			wordList.
+	public GameModel(int wordCount){
+		for(int i=0;i<wordCount;i++){
+			wordList.add(wordPool.getRandomWord());
 		}
 	}
+	
+	public int getCurrentWordIndex(){
+		return currentWordIndex;
+	}
+	public int getWordCount(){
+		return wordList.size();
+	}
+	public String getWordOne(){
+		return wordList.get(currentWordIndex);
+	}
+	public String getWordTwo(){
+		return wordList.get(currentWordIndex+1);
+	}
+	public void linkNextWord(){
+		currentWordIndex++;
+	}
 
-}
+	public boolean answerQuiz(String answer){
+		if(answer.equals(wordList.get(currentWordIndex+1))){
+			currentWordIndex++;
+			return true;
+		}else{
+			mistakes++;
+			return false;
+		}
+	}
+	
+	public void skipWord(){
+		currentWordIndex++;
+		skips++;
+	}
+	public void startQuizPhase(){
+		currentWordIndex =0;
+	}
+	public void endQuizPhase(){
+		int wordsRemaining = wordList.size()- currentWordIndex+1;
+		skips+= wordsRemaining;
+	}
+
+} 
