@@ -1,7 +1,11 @@
 package com.example.memoir;
 
 import android.os.Bundle;
+import android.app.ActionBar;
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.text.Html;
 import android.view.Menu;
 
 public class QuizPhaseActivity extends Activity {
@@ -10,6 +14,9 @@ public class QuizPhaseActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_quiz_phase);
+		ActionBar actionBar = getActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3498DB")));
+        actionBar.setTitle(Html.fromHtml("<large>QUIZ PHASE</large>"));
 	}
 
 	@Override

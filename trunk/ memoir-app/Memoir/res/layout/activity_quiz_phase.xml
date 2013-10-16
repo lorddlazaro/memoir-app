@@ -9,21 +9,45 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center" >
+        android:layout_gravity="left"
+        android:background="#ECF0F1"
+       
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Time"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/quizTimeLabel"
-            android:layout_width="150dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="3:12"
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/quizProgressLabel"
-            android:layout_width="150dp"
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="8/10 words"
+            android:layout_marginLeft="50dp"
+            android:text="8/10"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="words"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -32,14 +56,30 @@
         android:layout_height="match_parent"
         android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/quizFirstWordLabel"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:background="#3498db"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="Duck"
-            android:textSize="30sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3498DB"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="DUCK"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/icon_chainlink" />
 
         <EditText
             android:id="@+id/quizSecondWordTextField"
