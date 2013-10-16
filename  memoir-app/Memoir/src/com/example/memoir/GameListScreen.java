@@ -9,6 +9,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -32,6 +34,14 @@ public class GameListScreen extends Activity {
         Button startLinkingBtn =(Button) findViewById(R.id.startLinkingBtn);
         Typeface type1=Typeface.createFromAsset(getAssets(), "fonts/Lovelo/LoveloBlack.otf");
         startLinkingBtn.setTypeface(type1);
+        
+        startLinkingBtn.setOnClickListener(new OnClickListener(){    
+            @Override
+			public void onClick(View v) {
+            	Intent myIntent = new Intent(GameListScreen.this, LinkPhaseActivity.class);
+                startActivity(myIntent);
+			}
+        }); 
     }
 
 
