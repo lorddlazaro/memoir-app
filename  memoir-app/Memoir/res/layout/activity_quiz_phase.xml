@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".QuizPhaseActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/quizTimeLabel"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="3:12"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/quizProgressLabel"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="8/10 words"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/quizFirstWordLabel"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="#3498db"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Duck"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/quizSecondWordTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/skipButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="skip word" />
+
+    </LinearLayout>
+
+</LinearLayout>
