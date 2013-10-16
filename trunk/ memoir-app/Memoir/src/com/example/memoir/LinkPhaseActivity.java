@@ -9,22 +9,32 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.Menu;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class LinkPhaseActivity extends Activity {
 
-	GameModel gm = new GameModel(10);
-	TextView progressLabel = (TextView)findViewById(R.id.progressLabel);
-	TextView firstWordLabel = (TextView)findViewById(R.id.firstWordLabel);
-	TextView secondWordLabel = (TextView)findViewById(R.id.secondWordLabel);
-	TextView timeLabel = (TextView)findViewById(R.id.timeLabel);
-	Button nextWordLabel = (Button)findViewById(R.id.nextWordButton);
+	
+	GameModel gm;
+	TextView progressLabel;
+	TextView firstWordLabel;
+	TextView secondWordLabel;
+	TextView timeLabel;
+	Button nextWordLabel;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_link_phase);
+		
+		
+		gm = new GameModel(10);
+		progressLabel = (TextView)findViewById(R.id.progressLabel);
+		firstWordLabel = (TextView)findViewById(R.id.firstWordLabel);
+		secondWordLabel = (TextView)findViewById(R.id.secondWordLabel);
+		timeLabel = (TextView)findViewById(R.id.timeLabel);
+		nextWordLabel = (Button)findViewById(R.id.nextWordButton);
 		
 		
 		ActionBar actionBar = getActionBar();
@@ -52,13 +62,15 @@ public class LinkPhaseActivity extends Activity {
 		return true;
 	}
 	
-	public void nextWord(){
-		if(gm.getCurrentWordIndex()+3==gm.getWordCount()){
-			nextWordLabel.setText("Start Quiz!");
-		}else if(gm.getCurrentWordIndex()+2==gm.getWordCount()){
+	
+	public void nextWord(View v){
+		if(gm.getCurrentWordIndex()+2==gm.getWordCount()){
 			Intent intent = new Intent(this,QuizPhaseActivity.class);
 			//
 		}else{
+			if(gm.getCurrentWordIndex()+3==gm.getWordCount()){
+				nextWordLabel.setText("Start Quiz!");
+			}
 			gm.linkNextWord();
 			int progress = gm.getCurrentWordIndex()+1;
 			progressLabel.setText(progress+"/"+gm.getWordCount()+ "words");
@@ -71,5 +83,5 @@ public class LinkPhaseActivity extends Activity {
 			}
 		}
 	}
-
+	
 }
