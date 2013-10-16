@@ -3,6 +3,7 @@
     android:id="@+id/LinearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="nextWord"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -58,7 +59,9 @@
             android:id="@+id/nextWordButton"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
+            android:onClick="nextWord"
             android:text="Next Word" />
+
     </LinearLayout>
 
 </LinearLayout>
