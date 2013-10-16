@@ -21,7 +21,9 @@ public class AboutScreen extends Activity{
         
         Typeface myTypeface = Typeface.createFromAsset(getAssets(), "fonts/Mojav/Mojave-Regular.ttf");
         TextView myTextView = (TextView)findViewById(R.id.anamnesiaTxt);
+        TextView myTextView1 = (TextView)findViewById(R.id.kitsUsedTxt);
         myTextView.setTypeface(myTypeface);
+        myTextView1.setTypeface(myTypeface);
      }
 
 
