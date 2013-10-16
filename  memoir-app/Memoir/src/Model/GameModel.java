@@ -25,8 +25,11 @@ public class GameModel {
 	public String getWordOne(){
 		return wordList.get(currentWordIndex);
 	}
-	public String getWordTwo(){
-		return wordList.get(currentWordIndex+1);
+	public String getWordTwo() throws Exception{
+		if(currentWordIndex<wordList.size())
+			return wordList.get(currentWordIndex+1);
+		else
+			throw new Exception();
 	}
 	public void linkNextWord(){
 		currentWordIndex++;
@@ -52,6 +55,13 @@ public class GameModel {
 	public void endQuizPhase(){
 		int wordsRemaining = wordList.size()- currentWordIndex+1;
 		skips+= wordsRemaining;
+	}
+	
+	public int getSkips(){
+		return skips;
+	}
+	public int getMistakes(){
+		return mistakes;
 	}
 
 } 
