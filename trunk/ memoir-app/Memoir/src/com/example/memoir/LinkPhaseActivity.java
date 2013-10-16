@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.Html;
 import android.view.Menu;
 import android.view.View;
@@ -23,12 +24,12 @@ public class LinkPhaseActivity extends Activity {
 	TextView timeLabel;
 	Button nextWordLabel;
 	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_link_phase);
-		
-		
+		 
 		gm = new GameModel(10);
 		progressLabel = (TextView)findViewById(R.id.progressLabel);
 		firstWordLabel = (TextView)findViewById(R.id.firstWordLabel);
@@ -49,10 +50,24 @@ public class LinkPhaseActivity extends Activity {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-		
-		
+		}	
+		new CountDownTimer(300000, 1000) {
+			int i = 60;
+		     public void onTick(long millisUntilFinished) {
+		    	 i--;
+		    	 if(i<10){
+			    	 timeLabel.setText((millisUntilFinished/1000)/60 + ":0"+ i);
+		    	 }
+		    	 else timeLabel.setText((millisUntilFinished/1000)/60 + ":"+ i);
+		    	 if(i == 0){
+		    		 i = 60;
+		    	 }
+		     }
+
+		     public void onFinish() {
+		    	 Intent intent = new Intent(LinkPhaseActivity.this,QuizPhaseActivity.class);
+		     }
+		  }.start();
 	}
 
 	@Override
