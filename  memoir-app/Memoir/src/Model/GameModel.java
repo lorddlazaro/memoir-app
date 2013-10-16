@@ -33,6 +33,7 @@ public class GameModel {
 	}
 	public void linkNextWord(){
 		currentWordIndex++;
+		
 	}
 
 	public boolean answerQuiz(String answer){
