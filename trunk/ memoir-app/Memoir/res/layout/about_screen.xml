@@ -9,9 +9,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="DEVELOPED BY ANAMNESIA"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="23sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +21,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
         android:layout_weight="0.00"
-        android:background="#ECF0F1" >
+        android:background="#BDC3C7" >
 
         <ImageView
             android:id="@+id/imageView1"
@@ -57,7 +58,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_weight="0.00"
-        android:background="#ECF0F1" >
+        android:background="#BDC3C7" >
 
         <ImageView
             android:id="@+id/ImageView01"
@@ -94,7 +95,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_weight="0.00"
-        android:background="#ECF0F1" >
+        android:background="#BDC3C7" >
 
         <ImageView
             android:id="@+id/ImageView02"
@@ -131,7 +132,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_weight="0.00"
-        android:background="#ECF0F1" >
+        android:background="#BDC3C7" >
 
         <ImageView
             android:id="@+id/ImageView03"
@@ -167,9 +168,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="KITS USED"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="23sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -177,7 +179,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:background="#ECF0F1"
+        android:background="#BDC3C7"
         android:orientation="vertical" >
 
         <LinearLayout
