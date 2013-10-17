@@ -62,10 +62,14 @@ public class LinkPhaseActivity extends Activity {
 		    	 if(i == 0){
 		    		 i = 60;
 		    	 }
+		    	 if (i ==1 && (millisUntilFinished/1000)/60 == 0 ){
+		    		 i = 0;
+		    	 }
 		     }
 
 		     public void onFinish() {
 		    	 Intent intent = new Intent(LinkPhaseActivity.this,QuizPhaseActivity.class);
+		    	 startActivity(intent);
 		     }
 		  }.start();
 	}
@@ -81,6 +85,7 @@ public class LinkPhaseActivity extends Activity {
 	public void nextWord(View v){
 		if(gm.getCurrentWordIndex()+2==gm.getWordCount()){
 			Intent intent = new Intent(this,QuizPhaseActivity.class);
+			startActivity(intent);
 			//
 		}else{
 			if(gm.getCurrentWordIndex()+3==gm.getWordCount()){
@@ -96,6 +101,10 @@ public class LinkPhaseActivity extends Activity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
+		if(gm.getCurrentWordIndex() == 9){
+			Intent intent = new Intent(this,QuizPhaseActivity.class);
+			startActivity(intent);
 		}
 	}
 	
