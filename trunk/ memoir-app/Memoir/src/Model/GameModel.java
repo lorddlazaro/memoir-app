@@ -1,8 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class GameModel {
+public class GameModel implements Serializable{
 	private ArrayList<String> wordList = new ArrayList<String>();
 	private int currentWordIndex = 0;
 	private int skips =0;
@@ -64,5 +65,6 @@ public class GameModel {
 	public int getMistakes(){
 		return mistakes;
 	}
+
 
 } 
