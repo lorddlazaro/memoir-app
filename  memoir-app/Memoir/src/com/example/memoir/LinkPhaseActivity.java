@@ -87,6 +87,8 @@ public class LinkPhaseActivity extends Activity {
 			Intent intent = new Intent(this,QuizPhaseActivity.class);
 			startActivity(intent);
 			//
+			intent.putExtra("gameModel",gm);
+			startActivity(intent);
 		}else{
 			if(gm.getCurrentWordIndex()+3==gm.getWordCount()){
 				nextWordLabel.setText("Start Quiz!");
